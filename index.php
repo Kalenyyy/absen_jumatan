@@ -1,3 +1,14 @@
+
+<?php
+//ini sessionnya belum jalan kayaknya
+session_start();
+if(!isset($_SESSION["username"])){
+    header("location: login.php");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
