@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +111,7 @@ border-radius: 5px;
     <div class="card-body">
         <h4 class="card-title">masuk untuk melihat data solat jumat</h4>
              <center>
-                 <form method="post" action="login.php">
+                 <form method="post" action="index.php">
                         <br>
                         <br>
                         <div>
@@ -128,3 +132,5 @@ border-radius: 5px;
 <!-- card login -->
 </body>
 </html>
+
+
