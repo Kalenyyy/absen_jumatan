@@ -1,14 +1,10 @@
-
 <?php
-//ini sessionnya belum jalan kayaknya
 session_start();
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION['type'])) {
     header("location: login.php");
+    exit;
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,41 +41,41 @@ if(!isset($_SESSION["username"])){
 <body>
     <header>
         <h3>absen <span style="color:#3D6F8A;">jumatan</span></h3>
-   
+        <a href="logout.php">Logout</a>
     </header>
 <main>
-<a href="masjid/cicurug.php">
+<a href="masjid_mujahidin/cicurug.php">
     <div class="cont card" >
         <div class="card-body">
             <img src="img/masjid.png">
-            <h5>masjid cicurug</h5>
+            <h5>masjid Mujahidin</h5>
         </div>
     </div>
 </a>
    
-<a href="masjid/kongsi.php">
+<a href="masjid_kongsi/sukasari.php">
     <div class="cont card" >
         <div class="card-body">
             <img src="img/masjid.png">
-            <h5>masjid kongsi</h5>
+            <h5>Masjid Kongsi</h5>
         </div>
     </div>
 </a>
 
-<a href="masjid/cibalok.php">
+<a href="masjid_cibalok/cisarua.php">
     <div class="cont card" >
         <div class="card-body">
             <img src="img/masjid.png">
-            <h5>masjid cibalok</h5>
+            <h5>Masjid Cibalok</h5>
         </div>
     </div>
 </a>
 
-<a href="masjid/muhajidin.php">
+<a href="masjid_al_iqram/cibedug.php">
     <div class="cont card" >
         <div class="card-body">
             <img src="img/masjid.png">
-            <h5>masjid muhajidin</h5>
+            <h5>masjid Al-Iqram</h5>
         </div>
     </div>
 </a>
