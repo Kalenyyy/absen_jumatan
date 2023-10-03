@@ -3,9 +3,9 @@ session_start();
 if (!isset($_SESSION['type'])) {
     header("location: ../login.php");
 }
-require '../controllers.php';
+require '../../controllers.php';
 
-$siswa_cicurug = query("SELECT * FROM tb_absensi WHERE rayon = 'cicurug'");
+$siswa_wikrama = query("SELECT * FROM tb_mujahidin WHERE type = 'wikrama_2'");
 
 if (isset($_POST['save'])) {
     $tanggal_absen = $_POST['tanggal_absen'];
@@ -35,7 +35,7 @@ if (isset($_POST['save'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <title>cicurug</title>
     <style>
         header {
@@ -84,12 +84,11 @@ if (isset($_POST['save'])) {
 <body>
     <header>
         <h3>absen <span style="color:#3D6F8A;">jumatan</span></h3>
-        <a href="../logout.php">logout</a>
+        <a href="../../logout.php">logout</a>
     </header>
 
     <form action="" method="post">
-        <a href="wikrama.php">Rayon Wikrama</a>
-        <input type="date" name="tanggal_absen" id="">
+        <input type="date" name="tanggal_absen" id="" required>
         <table border="1" cellspacing="0" cellpadding="7">
             <thead>
                 <tr>
@@ -101,7 +100,7 @@ if (isset($_POST['save'])) {
             </thead>
             <tbody>
                 <?php $angka = 1; ?>
-                <?php foreach ($siswa_cicurug as $siswa) : ?>
+                <?php foreach ($siswa_wikrama as $siswa) : ?>
                     <tr>
                         <td><?= $angka; ?></td>
                         <td><?= $siswa['siswa_id']; ?></td>

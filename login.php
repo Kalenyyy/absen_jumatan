@@ -8,37 +8,27 @@ if (isset($_POST['login'])) {
     $query = mysqli_query($server, "SELECT * FROM login WHERE 
                                     username = '$username' AND password = '$password'");
 
-    
+
     if (mysqli_num_rows($query) > 0) {
         $fetch = mysqli_fetch_assoc($query);
         $_SESSION['id'] = $fetch['id'];
         $_SESSION['type'] = $fetch['type'];
         $_SESSION['nama'] = $fetch['username'];
-        
-        if($fetch['type'] == 'superadmin') {
+
+        if ($fetch['type'] == 'superadmin') {
             echo "<script>
             alert ('Login succesful, Welcome!!');
             document.location.href = 'index.php';
            </script>";
-        } elseif ($fetch['type'] == 'mujahidin') {
+        }elseif($fetch['type'] == 'cicurug') {
             echo "<script>
             alert ('Login succesful, Welcome!!');
-            document.location.href = 'masjid_mujahidin/cicurug.php';
+            document.location.href = 'masjid_mujahidin/home.php';
            </script>";
-        } elseif ($fetch['type'] == 'kongsi') {
+        }elseif($fetch['type'] == 'wikrama') {
             echo "<script>
             alert ('Login succesful, Welcome!!');
-            document.location.href = 'masjid_kongsi/sukasari.php';
-           </script>";
-        } elseif ($fetch['type'] == 'cibalok') {
-            echo "<script>
-            alert ('Login succesful, Welcome!!');
-            document.location.href = 'masjid_cibalok/cisarua.php';
-           </script>";
-        } elseif ($fetch['type'] == 'al_iqram') {
-            echo "<script>
-            alert ('Login succesful, Welcome!!');
-            document.location.href = 'masjid_al_iqram/cibedug.php';
+            document.location.href = 'masjid_mujahidin/home.php';
            </script>";
         }
     }
