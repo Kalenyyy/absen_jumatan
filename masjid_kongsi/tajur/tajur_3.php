@@ -5,18 +5,18 @@ if (!isset($_SESSION['type'])) {
 }
 require '../../controllers.php';
 
-$siswa_cicurug = query("SELECT * FROM tb_mujahidin WHERE type = 'cicurug_1'");
+$siswa_cisarua = query("SELECT * FROM tb_kongsi WHERE type = 'tajur_3'");
 
 if (isset($_POST['save'])) {
     $tanggal_absen = $_POST['tanggal_absen'];
 
-    foreach ($siswa_cicurug as $siswa) {
+    foreach ($siswa_cisarua as $siswa) {
         $siswa_id = $siswa['id'];
         $kehadiran = $_POST['status_kehadiran'][$siswa_id];
         $alasan = $_POST['alasan_tidak_hadir'][$siswa_id];
 
         // Simpan data kehadiran beserta alasan ke database
-        $sql = "UPDATE tb_mujahidin SET kehadiran = '$kehadiran', alasan_tidak_hadir = '$alasan', date = '$tanggal_absen' WHERE id = $siswa_id";
+        $sql = "UPDATE tb_kongsi SET kehadiran = '$kehadiran', alasan_tidak_hadir = '$alasan', date = '$tanggal_absen' WHERE id = $siswa_id";
         if (mysqli_query($server, $sql)) {
             echo "<script>
             alert ('Data Tersimpan');
@@ -36,7 +36,7 @@ if (isset($_POST['save'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <title>cicurug</title>
+    <title>cisarua</title>
     <style>
         header {
             background-color: #ececec;
@@ -100,7 +100,7 @@ if (isset($_POST['save'])) {
             </thead>
             <tbody>
                 <?php $angka = 1; ?>
-                <?php foreach ($siswa_cicurug as $siswa) : ?>
+                <?php foreach ($siswa_cisarua as $siswa) : ?>
                     <tr>
                         <td><?= $angka; ?></td>
                         <td><?= $siswa['siswa_id']; ?></td>

@@ -30,6 +30,26 @@ if (isset($_POST['login'])) {
             alert ('Login succesful, Welcome!!');
             document.location.href = 'masjid_mujahidin/home.php';
            </script>";
+        }elseif($fetch['type'] == 'cibedug') {
+            echo "<script>
+            alert ('Login succesful, Welcome!!');
+            document.location.href = 'masjid_al_iqram/home.php';
+           </script>";
+        }elseif($fetch['type'] == 'cisarua') {
+            echo "<script>
+            alert ('Login succesful, Welcome!!');
+            document.location.href = 'masjid_cibalok/home.php';
+           </script>";
+        }elseif($fetch['type'] == 'tajur') {
+            echo "<script>
+            alert ('Login succesful, Welcome!!');
+            document.location.href = 'masjid_kongsi/home.php';
+            </script>";
+        }elseif($fetch['type'] == 'sukasari') {
+            echo "<script>
+            alert ('Login succesful, Welcome!!');
+            document.location.href = 'masjid_kongsi/home.php';
+            </script>";
         }
     }
 }

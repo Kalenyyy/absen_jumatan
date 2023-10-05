@@ -16,11 +16,11 @@ if (isset($_POST['save'])) {
         $alasan = $_POST['alasan_tidak_hadir'][$siswa_id];
 
         // Simpan data kehadiran beserta alasan ke database
-        $sql = "UPDATE tb_absensi SET kehadiran = '$kehadiran', alasan_tidak_hadir = '$alasan', date = '$tanggal_absen' WHERE id = $siswa_id";
+        $sql = "UPDATE tb_mujahidin SET kehadiran = '$kehadiran', alasan_tidak_hadir = '$alasan', date = '$tanggal_absen' WHERE id = $siswa_id";
         if (mysqli_query($server, $sql)) {
             echo "<script>
             alert ('Data Tersimpan');
-            document.location.href = 'cicurug.php';
+            document.location.href = '../../login.php';
            </script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($server);
